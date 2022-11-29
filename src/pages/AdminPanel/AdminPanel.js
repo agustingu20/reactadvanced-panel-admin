@@ -9,13 +9,13 @@ const AdminPanel = () => {
 
   const getBenefits = async () => {
     const { docs } = await getDocs(collection(db, 'benefits'));
+    console.log('getBenefits ~ docs', docs);
 
     const benefitMap = docs.map((benefit) => {
       return {
         ...benefit.data(),
       };
     });
-
     setBenefitData(benefitMap);
   };
 
@@ -50,7 +50,7 @@ const AdminPanel = () => {
         </thead>
         <tbody>
           {benefitData?.map((benefit) => (
-            <BenefitTable benefit={benefit} key={benefit.id} />
+            <BenefitTable benefit={benefit} />
           ))}
         </tbody>
       </table>

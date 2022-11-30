@@ -1,32 +1,84 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
 import app from '../../firebase';
 
 const BenefitDataBase = () => {
   const db = getFirestore(app);
 
-  const createDataCollection = async (e) => {
+  const [title, setTitle] = useState('');
+  const [name, setName] = useState('');
+  const [shortDescription, setShortDescription] = useState('');
+  const [longDescription, setLongDescription] = useState('');
+  const [url, setUrl] = useState('');
+  const [days, setDays] = useState('');
+  const [isStaff, setIsStaff] = useState();
+
+  const onSubmitBenefit = async (e) => {
     e.preventDefault();
     const infoBenefit = {
-      name: 'La Argentina',
-      type: '10% descuento',
-      shortDescription: 'Descuento aniversario',
-      longDescription:
-        'Cumplimos 100 años y decidimos ferjarlo creando un Centro de Experiancias Virtual donde puedas conocer lo que hacemos, de una forma divertida. Juga en familia y aprendé más sobre nuestra compañía.',
-      days: 'Lunes a Viernes',
-      image: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/001/050/300/themes/common/ogimage-1363177326-1646402915-a1ab5d4fc53341bf3895a4429d645cc31646402915.png?0',
+      name,
+      title,
+      shortDescription,
+      longDescription,
+      days,
+      url,
+      isStaff,
     };
     try {
       const data = await addDoc(collection(db, 'benefits'), infoBenefit);
       console.log(data);
+      e.target.reset();
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
-    <form onSubmit={createDataCollection}>
-      <button type='submit'>Create data collection</button>
-    </form>
+    <div className='d-flex justify-content-center mt-5'>
+      <form
+        onSubmit={onSubmitBenefit}
+        className='d-flex justify-content-center flex-column w-50'
+      >
+        <input
+          placeholder='Nombre del beneficio'
+          className='mt-3'
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          placeholder='Ingrese un titulo'
+          className='mt-3'
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          placeholder='Ingrese la url de la imagen'
+          className='mt-3'
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <input
+          placeholder='Ingrese una descripcion corta'
+          className='mt-3'
+          onChange={(e) => setShortDescription(e.target.value)}
+        />
+        <input
+          placeholder='Ingrese una descripcion larga'
+          className='mt-3'
+          onChange={(e) => setLongDescription(e.target.value)}
+        />
+        <input
+          placeholder='Ingrese los dias del beneficio'
+          className='mt-3'
+          onChange={(e) => setDays(e.target.value)}
+        />
+        <select className='form-control form-control-sm mt-4' onChange={(e) => setIsStaff(e.target.value)}>
+          <option>Selecciona un valor</option>
+          <option value={true}>True</option>
+          <option value={false}>False</option>
+        </select>
+        <button type='submit' className='mt-3'>
+          Create data collection
+        </button>
+      </form>
+    </div>
   );
 };
 

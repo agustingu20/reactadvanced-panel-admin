@@ -6,10 +6,10 @@ import { db } from '../../firebase';
 
 const AdminPanel = () => {
   const [benefitData, setBenefitData] = useState([]);
+  console.log("🚀 ~ file: AdminPanel.js:9 ~ AdminPanel ~ benefitData", benefitData)
 
   const getBenefits = async () => {
     const { docs } = await getDocs(collection(db, 'benefits'));
-    console.log('getBenefits ~ docs', docs);
 
     const benefitMap = docs.map((benefit) => {
       return {
@@ -45,6 +45,7 @@ const AdminPanel = () => {
             <th scope="col">Short Description</th>
             <th scope="col">Long Description</th>
             <th scope="col">Image</th>
+            <th scope="col">IsStaff</th>
             <th />
           </tr>
         </thead>

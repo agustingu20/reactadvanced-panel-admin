@@ -9,7 +9,7 @@ const UserTable = ({ user }) => {
       <td>{user.email}</td>
       <td>{user.isStaff === 'false' ? 'User' : 'Staff'}</td>
       <td>
-        <img src={user.photoURL} className="w-25" alt="user-img" />
+        <img src={user.photoURL} className="w-50" alt="user-img" />
       </td>
       <td>
         <button className="btn btn-primary" disabled>

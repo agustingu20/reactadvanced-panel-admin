@@ -23,8 +23,8 @@ const BenefitsAdminPanel = () => {
 
   return (
     <>
-    <div className="container mt-3 ">
-      <table className="table table-hover">
+    <div className="container mt-3 table-responsive">
+      <table className="table table-hover align-middle">
         <thead className="text-center">
           <tr>
             <th scope="col">Benefit</th>

@@ -22,13 +22,13 @@ const UsersAdminPanel = () => {
 
   return (
     <>
-    <div className="container mt-3 ">
-      <table className="table table-hover">
+    <div className="container mt-3 table-responsive">
+      <table className="table table-hover align-middle">
         <thead className="text-center">
           <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Email</th>
-            <th scope="col">Type</th>
+            <th scope="col">Tipo usuario</th>
             <th scope="col">Foto de perfil</th>
             <th />
           </tr>

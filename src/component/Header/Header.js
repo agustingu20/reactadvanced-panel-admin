@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import LogoAdmin from '../../assets/LogoAdmin.png';
 
-const Header = () => {
-  const [isPressedBenefits, setIsPressedBenefits] = useState(true);
-  const [isPressedUsers, setIsPressedUsers] = useState(false);
-  const [isBenefits, setIsBenefits] = useState(true);
-  const [isUsers, setIsUsers] = useState(false);
-
+const Header = ({
+  isPressedBenefits,
+  setIsPressedBenefits,
+  isPressedUsers,
+  setIsPressedUsers,
+  isBenefits,
+  setIsBenefits,
+  isUsers,
+  setIsUsers,
+}) => {
   const onPressActiveBenefits = () => {
     if (!isPressedBenefits) {
       setIsPressedBenefits(true);

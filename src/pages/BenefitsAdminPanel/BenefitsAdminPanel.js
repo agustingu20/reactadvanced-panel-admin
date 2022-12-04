@@ -3,8 +3,9 @@ import { collection, getDocs } from 'firebase/firestore';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BenefitTable from '../../component/BenefitTable/BenefitTable';
 import { db } from '../../firebase';
+import BenefitDataBase from '../../component/BenefitDataBase/BenefitDataBase';
 
-const AdminPanel = () => {
+const BenefitsAdminPanel = () => {
   const [benefitData, setBenefitData] = useState([]);
 
   const getBenefits = async () => {
@@ -42,9 +43,10 @@ const AdminPanel = () => {
           ))}
         </tbody>
       </table>
+      <BenefitDataBase />
     </div>
     </>
   );
 };
 
-export default AdminPanel;
+export default BenefitsAdminPanel;

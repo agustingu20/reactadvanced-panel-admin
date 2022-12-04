@@ -74,7 +74,7 @@ const BenefitDataBase = () => {
           <option value={true}>True</option>
           <option value={false}>False</option>
         </select>
-        <button type='submit' className='mt-3'>
+        <button type='submit' className='mt-3 mb-5'>
           Create data collection
         </button>
       </form>

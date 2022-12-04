@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BenefitTable from '../../component/BenefitTable/BenefitTable';
 import { db } from '../../firebase';
 import { Header } from '../../component/Header';
-import { Footer } from '../../component/Footer';
 
 const AdminPanel = () => {
   const [benefitData, setBenefitData] = useState([]);
@@ -52,7 +51,6 @@ const AdminPanel = () => {
         </tbody>
       </table>
     </div>
-    <Footer/>
     </>
   );
 };

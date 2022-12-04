@@ -3,6 +3,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BenefitTable from '../../component/BenefitTable/BenefitTable';
 import { db } from '../../firebase';
+import { Header } from '../../component/Header';
 
 const AdminPanel = () => {
   const [benefitData, setBenefitData] = useState([]);
@@ -21,12 +22,9 @@ const AdminPanel = () => {
   }, []);
 
   return (
+    <>
+    <Header/>
     <div className="container mt-3 ">
-      <div className="text-center mt-3">
-        <h2>
-          <b>Admin Panel</b>
-        </h2>
-      </div>
       <div className="text-center my-5">
         <button className="btn btn-secondary btn-lg mx-3 w-25">Benefits</button>
         <button className="btn btn-outline-secondary btn-lg mx-3 w-25" disabled>
@@ -53,6 +51,7 @@ const AdminPanel = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 

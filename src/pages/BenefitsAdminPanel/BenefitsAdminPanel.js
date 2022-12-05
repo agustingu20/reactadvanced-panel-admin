@@ -1,52 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import BenefitTable from '../../component/BenefitTable/BenefitTable';
-import { db } from '../../firebase';
-import BenefitDataBase from '../../component/BenefitDataBase/BenefitDataBase';
+import React from 'react';
+import BenefitsTable from '../../components/BenefitsTable/BenefitsTable';
 
-const BenefitsAdminPanel = () => {
-  const [benefitData, setBenefitData] = useState([]);
-
-  const getBenefits = async () => {
-    const { docs } = await getDocs(collection(db, 'benefits'));
-
-    const benefitMap = docs.map((benefit) => {
-      return {...benefit.data(), id: benefit.id};
-    });
-    setBenefitData(benefitMap);
-  };
-
-  useEffect(() => {
-    getBenefits();
-  }, []);
-
+const AdminPanel = () => {
   return (
-    <>
-    <div className="container mt-3 table-responsive">
-      <table className="table table-hover align-middle">
-        <thead className="text-center">
-          <tr>
-            <th scope="col">Benefit</th>
-            <th scope="col">Type</th>
-            <th scope="col">Days</th>
-            <th scope="col">Short Description</th>
-            <th scope="col">Long Description</th>
-            <th scope="col">Image</th>
-            <th scope="col">IsStaff</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {benefitData?.map((benefit) => (
-            <BenefitTable benefit={benefit} key={benefit.id} />
-          ))}
-        </tbody>
-      </table>
-      <BenefitDataBase />
+    <div className="container mt-3">
+      <div className="text-center mt-3">
+        <h2><b>Admin Panel</b></h2>
+      </div>
+      <div className="text-center my-5">
+        <button className="btn btn-secondary btn-lg mx-3 w-25">Benefits</button>
+        <button className="btn btn-outline-secondary btn-lg mx-3 w-25" disabled>Users</button>
+      </div>
+      <BenefitsTable/>
     </div>
-    </>
   );
 };
 
-export default BenefitsAdminPanel;
+export default AdminPanel;

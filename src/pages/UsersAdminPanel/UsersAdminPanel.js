@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { db } from '../../firebase';
-import UserTable from '../../component/UserTable/UserTable';
+import UserTable from '../../components/UserTable/UserTable';
 
 const UsersAdminPanel = () => {
   const [usersData, setUsersData] = useState([]);

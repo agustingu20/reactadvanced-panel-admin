@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-import { Footer } from './component/Footer';
-import { Header } from './component/Header';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 import BenefitsAdminPanel from './pages/BenefitsAdminPanel/BenefitsAdminPanel';
 import UsersAdminPanel from './pages/UsersAdminPanel/UsersAdminPanel';
-import AdminPanel from './pages/AdminPanel/AdminPanel';
 
 function App() {
   const [isPressedBenefits, setIsPressedBenefits] = useState(true);
@@ -26,7 +25,6 @@ function App() {
       />
       {isPressedBenefits && isBenefits ? <BenefitsAdminPanel /> : <UsersAdminPanel />}
       <Footer />
-      <AdminPanel />
     </div>
   );
 }

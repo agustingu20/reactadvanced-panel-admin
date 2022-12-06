@@ -49,7 +49,7 @@ const BenefitsTable = () => {
   return (
     <>
     <button className='btn btn-success my-3' onClick={handleShow}>Añadir Beneficio</button>
-    <Table striped bordered hover>
+    <Table striped bordered hover responsive>
       <thead>
         <tr>
             <th>Benefit</th>
@@ -74,7 +74,7 @@ const BenefitsTable = () => {
                 <td><p className="truncateCSS">{benefit.longDescription}</p></td>
                 <td><img src={benefit.image} className="w-25" alt="benefit-img" /></td>
                 <td>{benefit.isStaff}</td>
-                <td className='d-flex justify-content-center align-items-center'>
+                <td className='d-flex justify-content-center pt-4 pb-4'>
                   <button className="btn btn-primary mx-2"  onClick={() => editB(benefit.id)}>Edit</button>
                   <button className="btn btn-danger" onClick={() => deleteBenefit(benefit.id)}>Eliminar</button>
                 </td>
@@ -84,7 +84,7 @@ const BenefitsTable = () => {
         }
       </tbody>
     </Table>
-        { isLoading && <div className="d-flex justify-content-center"><Spinner animation="border" variant="primary"/></div>}
+        { isLoading && <div className="d-flex justify-content-center"><Spinner animation="border" variant="primary" className='mb-5 mt-5'/></div>}
     <ModalAddBenefits showAdd={showAdd} setShowAdd={setShowAdd} getBenefits={getBenefits}/>
     <ModalEditBenefit getBenefits={getBenefits} editting={editting} showEdit={showEdit} setShowEdit={setShowEdit} benefitSelected={benefitSelected}/>
     </>

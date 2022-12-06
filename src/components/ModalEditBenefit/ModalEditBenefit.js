@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap'
 import { getFirestore, doc, updateDoc, getDoc } from 'firebase/firestore'
@@ -107,4 +106,4 @@ const ModalEditBenefit = ({ showEdit, setShowEdit, benefitSelected, editting, ge
   )
 }
 
-export default ModalEditBenefit
+export default ModalEditBenefit;

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
-import { getFirestore, doc, updateDoc, getDoc } from 'firebase/firestore';
+import {
+  getFirestore, doc, updateDoc, getDoc,
+} from 'firebase/firestore';
 import app from '../../firebase';
-import { useEffect } from 'react';
 
 const ModalEditBenefit = ({
   showEdit,

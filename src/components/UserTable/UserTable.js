@@ -18,20 +18,20 @@ const UserTable = ({
   const editUser = (id) => {
     setIsEditing(true);
     handleShow();
-    setUserSelectedId(id)
+    setUserSelectedId(id);
   };
 
   const deleteUser = async (userId) => {
     try {
       if (window.confirm('¿Eliminar Usuario?')) {
-        const userSelected = doc(db, 'users', userId)
-        await deleteDoc(userSelected)
-        getUsers()
+        const userSelected = doc(db, 'users', userId);
+        await deleteDoc(userSelected);
+        getUsers();
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <>
@@ -51,7 +51,12 @@ const UserTable = ({
           >
             Edit
           </button>
-          <button className="btn btn-danger mx-2 mt-4 mb-4" onClick={() => deleteUser(user.id)}>Delete</button>
+          <button
+            className="btn btn-danger mx-2 mt-4 mb-4"
+            onClick={() => deleteUser(user.id)}
+          >
+            Delete
+          </button>
         </td>
       </tr>
       <ModalEditUser

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
+import { Spinner } from 'react-bootstrap';
 import { db } from '../../firebase';
 import UserTable from '../../components/UserTable/UserTable';
-import { Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const UsersAdminPanel = () => {
@@ -10,7 +10,7 @@ const UsersAdminPanel = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showEditUser, setShowEditUser] = useState(false);
   const [userSelectedId, setUserSelectedId] = useState(null);
-  const [isEditing, setIsEditing] = useState(false)
+  const [isEditing, setIsEditing] = useState(false);
 
   const getUsers = async () => {
     const { docs } = await getDocs(collection(db, 'users'));

@@ -4,7 +4,7 @@ import { getFirestore, doc, updateDoc, getDoc } from 'firebase/firestore';
 import app from '../../firebase';
 import { useEffect } from 'react';
 
-const ModalEditUser = ({ 
+const ModalEditUser = ({
   getUsers,
   showEditUser,
   setShowEditUser,
@@ -54,7 +54,7 @@ const ModalEditUser = ({
 
   useEffect(() => {
     if (isEditing) {
-        gettingUser();
+      gettingUser();
     }
   }, [userSelectedId]);
 
@@ -103,15 +103,15 @@ const ModalEditUser = ({
               label="Tipo Usuario"
               className="mb-3"
             >
-              <Form.Control
-                maxLength={50}
+              <Form.Select
                 required
                 name="isStaff"
-                onChange={handleChange}
                 value={values.isStaff}
-                type="text"
-                placeholder="Tipo Usuario"
-              />
+                onChange={handleChange}
+              >
+                <option value={'true'}>Staff</option>
+                <option value={'false'}>User</option>
+              </Form.Select>
             </FloatingLabel>
 
             <FloatingLabel

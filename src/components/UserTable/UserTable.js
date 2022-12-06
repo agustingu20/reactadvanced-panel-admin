@@ -1,4 +1,6 @@
+import { deleteDoc, doc } from 'firebase/firestore';
 import React from 'react';
+import { db } from '../../firebase';
 import ModalEditUser from '../ModalEditUser/ModalEditUser';
 
 const UserTable = ({
@@ -19,6 +21,18 @@ const UserTable = ({
     setUserSelectedId(id)
   };
 
+  const deleteUser = async (userId) => {
+    try {
+      if (window.confirm('¿Eliminar Usuario?')) {
+        const userSelected = doc(db, 'users', userId)
+        await deleteDoc(userSelected)
+        getUsers()
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <tr>
@@ -37,7 +51,7 @@ const UserTable = ({
           >
             Edit
           </button>
-          <button className="btn btn-danger mx-2 mt-4 mb-4">Delete</button>
+          <button className="btn btn-danger mx-2 mt-4 mb-4" onClick={() => deleteUser(user.id)}>Delete</button>
         </td>
       </tr>
       <ModalEditUser

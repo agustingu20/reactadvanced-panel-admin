@@ -16,7 +16,7 @@ const ModalEditUser = ({
   const handleClose = () => setShowEditUser(false);
 
   const [values, setValues] = useState({
-    name: '',
+    displayName: '',
     email: '',
     isStaff: '',
     photoURL: '',
@@ -49,7 +49,7 @@ const ModalEditUser = ({
       handleClose();
       setIsEditing(false);
     } catch (error) {
-      alert(`error firebase: ${error.message}`);
+      console.error(error);
     }
   };
 

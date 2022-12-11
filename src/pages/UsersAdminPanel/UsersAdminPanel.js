@@ -51,6 +51,7 @@ const UsersAdminPanel = () => {
                 setUserSelectedId={setUserSelectedId}
                 isEditing={isEditing}
                 setIsEditing={setIsEditing}
+                data-testid='userTable'
               />
             ))}
           </tbody>

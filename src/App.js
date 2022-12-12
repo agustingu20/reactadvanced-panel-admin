@@ -12,7 +12,7 @@ function App() {
   const [isUsers, setIsUsers] = useState(false);
 
   return (
-    <div className="App">
+    <div className='App'>
       <Header
         isPressedBenefits={isPressedBenefits}
         setIsPressedBenefits={setIsPressedBenefits}

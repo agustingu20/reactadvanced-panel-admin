@@ -51,7 +51,7 @@ const BenefitsTable = () => {
   }, []);
   return (
     <>
-      <button className="btn btn-success my-3" onClick={handleShow}>
+      <button className='btn btn-success my-3' onClick={handleShow}>
         Añadir Beneficio
       </button>
       <Table striped bordered hover responsive>
@@ -78,24 +78,24 @@ const BenefitsTable = () => {
                 <td>{benefit.days}</td>
                 <td>{benefit.shortDescription}</td>
                 <td>
-                  <p className="truncateCSS">{benefit.longDescription}</p>
+                  <p className='truncateCSS'>{benefit.longDescription}</p>
                 </td>
                 <td>
-                  <img src={benefit.image} className="w-25" alt="benefit-img" />
+                  <img src={benefit.image} className='w-25' alt='benefit-img' />
                 </td>
                 <td>{benefit.isStaff}</td>
-                <td className="d-flex justify-content-center pt-4 pb-4">
+                <td className='d-flex justify-content-center pt-4 pb-4'>
                   <button
-                    className="btn btn-primary mx-2"
+                    className='btn btn-primary mx-2'
                     onClick={() => editB(benefit.id)}
                   >
                     Edit
                   </button>
                   <button
-                    className="btn btn-danger"
+                    className='btn btn-danger'
                     onClick={() => deleteBenefit(benefit.id)}
                   >
-                    Eliminar
+                    Delete
                   </button>
                 </td>
               </tr>
@@ -104,8 +104,8 @@ const BenefitsTable = () => {
         </tbody>
       </Table>
       {isLoading && (
-        <div className="d-flex justify-content-center">
-          <Spinner animation="border" variant="primary" className="mb-5 mt-5" />
+        <div className='d-flex justify-content-center'>
+          <Spinner animation='border' variant='primary' className='mb-5 mt-5' />
         </div>
       )}
       <ModalAddBenefits

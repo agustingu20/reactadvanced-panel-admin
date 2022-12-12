@@ -39,90 +39,90 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
         <Modal.Body>
           <form onSubmit={handleSubmit(submit)}>
             <FloatingLabel
-              controlId="floatingInput"
-              label="Nombre"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Nombre'
+              className='mb-3'
             >
               <Form.Control
                 {...register('name', { required: true })}
-                type="text"
-                placeholder="Nombre"
+                type='text'
+                placeholder='Nombre'
               />
             </FloatingLabel>
             {errors?.name && (
-              <span className="text-danger">Nombre requerido</span>
+              <span className='text-danger'>Nombre requerido</span>
             )}
             <FloatingLabel
-              controlId="floatingInput"
-              label="Titulo"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Titulo'
+              className='mb-3'
             >
               <Form.Control
                 {...register('title', { required: true })}
-                type="text"
-                placeholder="Titulo"
+                type='text'
+                placeholder='Titulo'
               />
             </FloatingLabel>
             {errors?.title && (
-              <span className="text-danger">Titulo requerido</span>
+              <span className='text-danger'>Titulo requerido</span>
             )}
             <FloatingLabel
-              controlId="floatingInput"
-              label="Descripcion corta"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Descripcion corta'
+              className='mb-3'
             >
               <Form.Control
                 {...register('shortDescription', { required: true })}
-                type="text"
-                placeholder="Descripcion corta"
+                type='text'
+                placeholder='Descripcion corta'
               />
             </FloatingLabel>
             {errors?.shortDescription && (
-              <span className="text-danger">descripcion requerida</span>
+              <span className='text-danger'>descripcion requerida</span>
             )}
             <FloatingLabel
-              controlId="floatingInput"
-              label="Descripcion Larga"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Descripcion Larga'
+              className='mb-3'
             >
               <Form.Control
                 {...register('longDescription', { required: true })}
-                type="text"
+                type='text'
                 rows={3}
-                as="textarea"
-                placeholder="Descripcion Larga"
+                as='textarea'
+                placeholder='Descripcion Larga'
               />
             </FloatingLabel>
             {errors?.longDescription && (
-              <span className="text-danger">descripcion requerida</span>
+              <span className='text-danger'>descripcion requerida</span>
             )}
             <FloatingLabel
-              controlId="floatingInput"
-              label="Dias del beneficio"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Dias del beneficio'
+              className='mb-3'
             >
               <Form.Control
                 {...register('days', { required: true })}
-                type="text"
-                placeholder="Dias del beneficio"
+                type='text'
+                placeholder='Dias del beneficio'
               />
             </FloatingLabel>
             {errors?.days && (
-              <span className="text-danger">dias requeridos</span>
+              <span className='text-danger'>dias requeridos</span>
             )}
             <FloatingLabel
-              controlId="floatingInput"
-              label="URL imagen"
-              className="mb-3"
+              controlId='floatingInput'
+              label='URL imagen'
+              className='mb-3'
             >
               <Form.Control
                 {...register('url', { required: true })}
-                type="text"
-                placeholder="URL imagen"
+                type='text'
+                placeholder='URL imagen'
               />
             </FloatingLabel>
             {errors?.url && (
-              <span className="text-danger">URL, campo requerido</span>
+              <span className='text-danger'>URL, campo requerido</span>
             )}
             <Form.Select {...register('isStaf', { required: true })}>
               <option>IsStaf</option>
@@ -130,14 +130,14 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
               <option value={false}>False</option>
             </Form.Select>
             {errors?.isStaff && (
-              <span className="text-danger">Selecciona un valor</span>
+              <span className='text-danger'>Selecciona un valor</span>
             )}
-            <button className="btn btn-primary my-3" type="submit">
+            <button className='btn btn-primary my-3' type='submit'>
               {buttonLoad ? 'loading...' : 'Añadir'}
             </button>
           </form>
         </Modal.Body>
-        <button className="btn btn-success" onClick={handleClose}>
+        <button className='btn btn-success' onClick={handleClose}>
           Cerrar
         </button>
       </Modal>

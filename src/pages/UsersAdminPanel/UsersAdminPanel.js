@@ -28,15 +28,15 @@ const UsersAdminPanel = () => {
 
   return (
     <>
-      <div className="container mt-3 table-responsive">
-        <table className="table table-hover table-bordered align-middle">
-          <thead className="text-center">
+      <div className='container mt-3 table-responsive'>
+        <table className='table table-hover table-bordered align-middle'>
+          <thead className='text-center'>
             <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Email</th>
-              <th scope="col">Tipo usuario</th>
-              <th scope="col">Foto de perfil</th>
-              <th scope="col2">Acciones</th>
+              <th scope='col'>Nombre</th>
+              <th scope='col'>Email</th>
+              <th scope='col'>Tipo usuario</th>
+              <th scope='col'>Foto de perfil</th>
+              <th scope='col2'>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -56,11 +56,11 @@ const UsersAdminPanel = () => {
           </tbody>
         </table>
         {isLoading && (
-          <div className="d-flex justify-content-center mx-auto">
+          <div className='d-flex justify-content-center mx-auto'>
             <Spinner
-              animation="border"
-              variant="primary"
-              className="mb-5 mt-5"
+              animation='border'
+              variant='primary'
+              className='mb-5 mt-5'
             />
           </div>
         )}

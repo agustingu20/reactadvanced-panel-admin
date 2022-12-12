@@ -71,105 +71,105 @@ const ModalEditBenefit = ({
         <Modal.Body>
           <form onSubmit={handleEdit}>
             <FloatingLabel
-              controlId="floatingInput"
-              label="Nombre"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Nombre'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={30}
                 required
-                name="name"
+                name='name'
                 onChange={handleChange}
                 value={values.name}
-                type="text"
-                placeholder="Nombre"
+                type='text'
+                placeholder='Nombre'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Titulo"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Titulo'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={30}
                 required
-                name="title"
+                name='title'
                 onChange={handleChange}
                 value={values.title}
-                type="text"
-                placeholder="Titulo"
+                type='text'
+                placeholder='Titulo'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Descripcion corta"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Descripcion corta'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={50}
                 required
-                name="shortDescription"
+                name='shortDescription'
                 onChange={handleChange}
                 value={values.shortDescription}
-                type="text"
-                placeholder="Descripcion corta"
+                type='text'
+                placeholder='Descripcion corta'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Descripcion Larga"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Descripcion Larga'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={150}
                 required
-                name="longDescription"
+                name='longDescription'
                 onChange={handleChange}
                 value={values.longDescription}
-                type="text"
+                type='text'
                 rows={3}
-                as="textarea"
-                placeholder="Descripcion Larga"
+                as='textarea'
+                placeholder='Descripcion Larga'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Dias del beneficio"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Dias del beneficio'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={15}
                 required
-                name="days"
-                type="text"
+                name='days'
+                type='text'
                 value={values.days}
                 onChange={handleChange}
-                placeholder="Dias del beneficio"
+                placeholder='Dias del beneficio'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="URL imagen"
-              className="mb-3"
+              controlId='floatingInput'
+              label='URL imagen'
+              className='mb-3'
             >
               <Form.Control
                 required
-                name="url"
-                type="text"
+                name='url'
+                type='text'
                 value={values.url}
                 onChange={handleChange}
-                placeholder="URL imagen"
+                placeholder='URL imagen'
               />
             </FloatingLabel>
 
             <Form.Select
               required
-              name="isStaff"
+              name='isStaff'
               value={values.isStaff}
               onChange={handleChange}
             >
@@ -178,12 +178,12 @@ const ModalEditBenefit = ({
               <option value={false}>False</option>
             </Form.Select>
 
-            <button className="btn btn-primary my-3" type="submit">
+            <button className='btn btn-primary my-3' type='submit'>
               {edditing ? 'editando...' : 'Editar'}
             </button>
           </form>
         </Modal.Body>
-        <button className="btn btn-success" onClick={handleClose}>
+        <button className='btn btn-success' onClick={handleClose}>
           Cerrar
         </button>
       </Modal>

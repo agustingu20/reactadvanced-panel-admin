@@ -42,17 +42,17 @@ const UserTable = ({
         <td>{user.email}</td>
         <td>{user.isStaff === 'false' ? 'User' : 'Staff'}</td>
         <td>
-          <img src={user.photoURL} className="w-25" alt="user-img" />
+          <img src={user.photoURL} className='w-25' alt='user-img' />
         </td>
-        <td className="d-flex justify-content-center">
+        <td className='dd-flex justify-content-center pt-4 pb-4'>
           <button
-            className="btn btn-primary mx-2 mt-4 mb-4"
+            className='btn btn-primary mx-2'
             onClick={() => editUser(user.id)}
           >
             Edit
           </button>
           <button
-            className="btn btn-danger mx-2 mt-4 mb-4"
+            className='btn btn-danger'
             onClick={() => deleteUser(user.id)}
           >
             Delete

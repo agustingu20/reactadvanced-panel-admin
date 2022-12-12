@@ -1,6 +1,7 @@
 .footer{
     margin-top: auto;
     padding: 1rem;
+    position: sticky;
     background-color: #373A3C;
     color: #f8f9fa;
     font-size: 1.3rem;

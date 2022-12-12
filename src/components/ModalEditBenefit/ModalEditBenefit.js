@@ -32,7 +32,7 @@ const ModalEditBenefit = ({
       const benefitValues = benefit.data();
       setValues(benefitValues);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

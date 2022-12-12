@@ -19,13 +19,12 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
     const benefit = result;
     try {
       setButtonLoad(true);
-      const data = await addDoc(collection(db, 'benefits'), benefit);
-      console.log(data);
+      await addDoc(collection(db, 'benefits'), benefit);
       getBenefits();
       handleClose();
       reset();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
     setButtonLoad(false);
   };

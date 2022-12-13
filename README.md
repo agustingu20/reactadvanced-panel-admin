@@ -26,7 +26,7 @@ Para iniciar la aplicación en su puerto local, correr el comanto npm start.
 - Firebase
 
 ## Desarrolladores:
-Agustin Gómez Urrutia (Technical Leader)
-Daniel Aguilar
-Cecilia Dip
+- Agustin Gómez Urrutia (Technical Leader)
+- Daniel Aguilar
+- Cecilia Dip
 

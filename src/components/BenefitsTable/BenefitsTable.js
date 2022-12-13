@@ -18,7 +18,7 @@ const BenefitsTable = () => {
 
   const handleShow = () => setShowAdd(true);
   const handleShowEdit = () => setShowEdit(true);
-
+  /* istanbul ignore next */
   const getBenefits = async () => {
     const { docs } = await getDocs(collection(db, 'benefits'));
     const benefitMap = docs.map((benefit) => {
@@ -27,7 +27,7 @@ const BenefitsTable = () => {
     setBenefitsData(benefitMap);
     setIsLoading(false);
   };
-
+  /* istanbul ignore next */
   const deleteBenefit = async (benefitId) => {
     try {
       if (window.confirm('¿Eliminar beneficio?')) {
@@ -36,10 +36,10 @@ const BenefitsTable = () => {
         getBenefits();
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
-
+  /* istanbul ignore next */
   const editB = (id) => {
     setEdittng(true);
     handleShowEdit();
@@ -87,12 +87,14 @@ const BenefitsTable = () => {
                 <td className='d-flex justify-content-center pt-4 pb-4'>
                   <button
                     className='btn btn-primary mx-2'
+                    data-testId= 'editBenefitButtonTest'
                     onClick={() => editB(benefit.id)}
                   >
                     Edit
                   </button>
                   <button
                     className='btn btn-danger'
+                    data-testId= 'deleteBenefitButtonTest'
                     onClick={() => deleteBenefit(benefit.id)}
                   >
                     Delete

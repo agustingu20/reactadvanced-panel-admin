@@ -15,21 +15,23 @@ const UserTable = ({
 }) => {
   const handleShow = () => setShowEditUser(true);
 
+  /* istanbul ignore next */
   const editUser = (id) => {
     setIsEditing(true);
     handleShow();
     setUserSelectedId(id);
   };
-
   const deleteUser = async (userId) => {
     try {
+      /* istanbul ignore next */
       if (window.confirm('¿Eliminar Usuario?')) {
         const userSelected = doc(db, 'users', userId);
         await deleteDoc(userSelected);
         getUsers();
       }
     } catch (error) {
-      console.log(error);
+      /* istanbul ignore next */
+      console.error(error);
     }
   };
 
@@ -47,12 +49,14 @@ const UserTable = ({
         <td className='dd-flex justify-content-center pt-4 pb-4'>
           <button
             className='btn btn-primary mx-2'
+            data-testId= 'editUserButton'
             onClick={() => editUser(user.id)}
           >
             Edit
           </button>
           <button
             className='btn btn-danger'
+            data-testId= 'deleteUserButton'
             onClick={() => deleteUser(user.id)}
           >
             Delete

@@ -12,9 +12,9 @@ const UsersAdminPanel = () => {
   const [userSelectedId, setUserSelectedId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
+  /* istanbul ignore next */
   const getUsers = async () => {
     const { docs } = await getDocs(collection(db, 'users'));
-
     const usersMap = docs.map((user) => {
       return { ...user.data(), id: user.id };
     });

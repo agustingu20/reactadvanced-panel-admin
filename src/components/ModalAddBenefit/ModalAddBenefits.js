@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useState } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -25,7 +26,7 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
       handleClose();
       reset();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
     setButtonLoad(false);
   };

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useState, useEffect } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import {
@@ -29,7 +30,7 @@ const ModalEditUser = ({
       const userValues = user.data();
       setValues(userValues);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React from 'react';
 import BenefitsTable from '../../components/BenefitsTable/BenefitsTable';
 

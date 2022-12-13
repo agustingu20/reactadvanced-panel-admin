@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useState, useEffect } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import {
@@ -68,45 +69,45 @@ const ModalEditUser = ({
         <Modal.Body>
           <form onSubmit={handleEdit}>
             <FloatingLabel
-              controlId="floatingInput"
-              label="Nombre"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Nombre'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={30}
                 required
-                name="displayName"
+                name='displayName'
                 onChange={handleChange}
                 value={values.displayName}
-                type="text"
-                placeholder="Nombre"
+                type='text'
+                placeholder='Nombre'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Email"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Email'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={30}
                 required
-                name="email"
+                name='email'
                 onChange={handleChange}
                 value={values.email}
-                type="email"
-                placeholder="Email"
+                type='email'
+                placeholder='Email'
               />
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Tipo Usuario"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Tipo Usuario'
+              className='mb-3'
             >
               <Form.Select
                 required
-                name="isStaff"
+                name='isStaff'
                 value={values.isStaff}
                 onChange={handleChange}
               >
@@ -116,24 +117,24 @@ const ModalEditUser = ({
             </FloatingLabel>
 
             <FloatingLabel
-              controlId="floatingInput"
-              label="Foto Perfil"
-              className="mb-3"
+              controlId='floatingInput'
+              label='Foto Perfil'
+              className='mb-3'
             >
               <Form.Control
                 maxLength={150}
                 required
-                name="photoURL"
+                name='photoURL'
                 onChange={handleChange}
                 value={values.photoURL}
-                type="text"
+                type='text'
                 rows={3}
-                as="textarea"
-                placeholder="Foto Perfil"
+                as='textarea'
+                placeholder='Foto Perfil'
               />
             </FloatingLabel>
 
-            <button className="btn btn-primary my-3" type="submit">
+            <button className='btn btn-primary my-3' type='submit'>
               {!isEditing ? 'editando...' : 'Editar'}
             </button>
           </form>

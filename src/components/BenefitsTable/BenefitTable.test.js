@@ -13,7 +13,7 @@ const benefit = {
 };
 
 describe('Test Benefit table', () => {
-  test('Verificamos que renderice el map', () => {
+  test('Verificamos que funcionen los botones', () => {
     render(
             <BenefitsTable benefit={benefit}/>,
     );

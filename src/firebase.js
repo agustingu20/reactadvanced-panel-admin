@@ -4,12 +4,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBYuiXpen3WOQ1OZQgQ-1I-dtAq-PBBuXk',
-  authDomain: 'project-r22.firebaseapp.com',
-  projectId: 'project-r22',
-  storageBucket: 'project-r22.appspot.com',
-  messagingSenderId: '677039098705',
-  appId: '1:677039098705:web:3bdabfb587f1c4aa1aa170',
+  apiKey: 'AIzaSyBRRKioKCgUWaUJ0sUZ5kIXfn6hrPekvu0',
+  authDomain: 'rolling-benefits.firebaseapp.com',
+  projectId: 'rolling-benefits',
+  storageBucket: 'rolling-benefits.appspot.com',
+  messagingSenderId: '727875119103',
+  appId: '1:727875119103:web:4eac97fa87e18f790b29ca',
 };
 
 const app = initializeApp(firebaseConfig);

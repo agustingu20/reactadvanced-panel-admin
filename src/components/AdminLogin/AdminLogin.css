@@ -1,14 +1,3 @@
-body{
-    height: 100vh ;
-    position: relative;
-    background: url(../../assets/bg-log-in.jpg);
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    background-attachment: fixed;
-    backdrop-filter: blur(5px);
-    
-}
-
 .log-in-button{
     font-weight: 400;
 }

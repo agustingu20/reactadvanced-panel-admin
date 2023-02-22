@@ -7,7 +7,6 @@ import './AdminLogin.css';
 
 const AdminLogin = ({ setIsLogin }) => {
   const [values, setValues] = useState({
-    email: '',
     password: '',
   });
   const { handleSubmit } = useForm();
@@ -21,14 +20,14 @@ const AdminLogin = ({ setIsLogin }) => {
 
   const submit = () => {
     if (
-      values.email === 'admin@admin.com' && values.password === 'Admin@1234'
+      values.password === 'Admin@1234'
     ) {
       setIsLogin(true);
     }
   };
 
   return (
-    <div className="bg-image d-flex align-items-center">
+    <div className="d-flex align-items-center">
       <div className="container">
         <div className="card w-50 mt-5">
           <img src={LogoAdmin} className="card-img-top w-75 mx-5 my-2" alt="..."/>

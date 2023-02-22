@@ -31,7 +31,7 @@ const Header = ({
   };
 
   return (
-    <div>
+    <div className='container'>
       <img src={LogoAdmin} alt='Header Admin Panel' className='mt-2 w-25' />
       <div className='text-center my-5'>
         <button

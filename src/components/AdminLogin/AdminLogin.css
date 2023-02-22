@@ -1,0 +1,19 @@
+body{
+    height: 100vh ;
+    position: relative;
+    background: url(../../assets/bg-log-in.jpg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    
+}
+
+.log-in-button{
+    font-weight: 400;
+}
+
+.log-in-button:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}

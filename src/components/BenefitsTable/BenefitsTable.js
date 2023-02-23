@@ -96,7 +96,7 @@ const BenefitsTable = () => {
                   <p className='truncateCSS'>{benefit.longDescription}</p>
                 </td>
                 <td>
-                  <img src={benefit.image} className='w-25' alt='benefit-img' />
+                  <img src={benefit.url} className='w-25' alt='benefit-img' />
                 </td>
                 <td>{benefit.isStaff}</td>
                 <td className='d-flex justify-content-center pt-4 pb-4'>

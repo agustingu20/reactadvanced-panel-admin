@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 import LogoAdmin from '../../assets/LogoAdmin.png';
 
 import './AdminLogin.css';
@@ -23,6 +24,8 @@ const AdminLogin = ({ setIsLogin }) => {
       values.password === 'Admin@1234'
     ) {
       setIsLogin(true);
+    } else {
+      Swal.fire('Contraseña incorrecta');
     }
   };
 

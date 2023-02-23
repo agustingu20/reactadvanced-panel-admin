@@ -3,6 +3,7 @@ import { Table, Spinner } from 'react-bootstrap';
 import {
   getDocs, collection, deleteDoc, doc,
 } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 import { db } from '../../firebase';
 import './BenefitsTable.css';
 import ModalAddBenefits from '../ModalAddBenefit/ModalAddBenefits';
@@ -28,9 +29,30 @@ const BenefitsTable = () => {
     setIsLoading(false);
   };
   /* istanbul ignore next */
+
+  // !!!! COMENTARIO: ARREGLAR LA CONFIRMACIÓN DEL SWEET ALERT
+
   const deleteBenefit = async (benefitId) => {
     try {
-      if (window.confirm('¿Eliminar beneficio?')) {
+      if (
+
+        Swal.fire({
+          title: 'Quieres borrar este beneficio?',
+          text: 'No se puede volver atrás',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Borrar beneficio',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Beneficio eliminado!',
+              'El beneficio fue eliminado.',
+              'success',
+            );
+          }
+        })) {
         const benefitSelectedById = doc(db, 'benefits', benefitId);
         await deleteDoc(benefitSelectedById);
         getBenefits();

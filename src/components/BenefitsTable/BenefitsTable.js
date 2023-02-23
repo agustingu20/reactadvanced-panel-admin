@@ -30,36 +30,29 @@ const BenefitsTable = () => {
   };
   /* istanbul ignore next */
 
-  // !!!! COMENTARIO: ARREGLAR LA CONFIRMACIÓN DEL SWEET ALERT
-
-  const deleteBenefit = async (benefitId) => {
-    try {
-      if (
-
-        Swal.fire({
-          title: 'Quieres borrar este beneficio?',
-          text: 'No se puede volver atrás',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Borrar beneficio',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              'Beneficio eliminado!',
-              'El beneficio fue eliminado.',
-              'success',
-            );
-          }
-        })) {
+  const deleteBenefit = (benefitId) => {
+    Swal.fire({
+      title: 'Quieres borrar este beneficio?',
+      text: 'No se puede volver atrás',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Borrar beneficio',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Beneficio eliminado!',
+          'El beneficio fue eliminado.',
+          'success',
+        );
         const benefitSelectedById = doc(db, 'benefits', benefitId);
         await deleteDoc(benefitSelectedById);
         getBenefits();
+      } else {
+        Swal.fire('El beneficio no fue eliminado.');
       }
-    } catch (error) {
-      console.error(error);
-    }
+    });
   };
   /* istanbul ignore next */
   const editB = (id) => {
@@ -109,14 +102,14 @@ const BenefitsTable = () => {
                 <td className='d-flex justify-content-center pt-4 pb-4'>
                   <button
                     className='btn btn-primary mx-2'
-                    data-testId= 'editBenefitButtonTest'
+                    data-testId='editBenefitButtonTest'
                     onClick={() => editB(benefit.id)}
                   >
                     Edit
                   </button>
                   <button
                     className='btn btn-danger'
-                    data-testId= 'deleteBenefitButtonTest'
+                    data-testId='deleteBenefitButtonTest'
                     onClick={() => deleteBenefit(benefit.id)}
                   >
                     Delete

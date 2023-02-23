@@ -22,37 +22,30 @@ const UserTable = ({
     handleShow();
     setUserSelectedId(id);
   };
-  const deleteUser = async (userId) => {
-    try {
-      /* istanbul ignore next */
-
-      // !!!!!!!!! COMENTARIO: ARREGLAR MODAL DE SWEET ALERT
-      if (
-        Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              'Deleted!',
-              'Your file has been deleted.',
-              'success',
-            );
-          }
-        })) {
+  const deleteUser = (userId) => {
+    /* istanbul ignore next */
+    Swal.fire({
+      title: 'Está seguro que quiere eliminar?',
+      text: 'No podrá revertir esta acción!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Eliminado!',
+          'El usuario fue eliminado correctamente.',
+          'success',
+        );
         const userSelected = doc(db, 'users', userId);
         await deleteDoc(userSelected);
         getUsers();
+      } else {
+        Swal.fire('El usuario no fue eliminado.');
       }
-    } catch (error) {
-      /* istanbul ignore next */
-      console.error(error);
-    }
+    });
   };
 
   return (
@@ -64,19 +57,19 @@ const UserTable = ({
         <td>{user.email}</td>
         <td>{user.isStaff === 'false' ? 'User' : 'Staff'}</td>
         <td>
-          <img src={user.photoURL} className='w-25' alt='user-img' />
+          <img src={user.photoURL} className="w-25" alt="user-img" />
         </td>
-        <td className='dd-flex justify-content-center pt-4 pb-4'>
+        <td className="dd-flex justify-content-center pt-4 pb-4">
           <button
-            className='btn btn-primary mx-2'
-            data-testId= 'editUserButton'
+            className="btn btn-primary mx-2"
+            data-testId="editUserButton"
             onClick={() => editUser(user.id)}
           >
             Edit
           </button>
           <button
-            className='btn btn-danger'
-            data-testId= 'deleteUserButton'
+            className="btn btn-danger"
+            data-testId="deleteUserButton"
             onClick={() => deleteUser(user.id)}
           >
             Delete

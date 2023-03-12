@@ -29,7 +29,7 @@ const AdminLogin = ({ setIsLogin }) => {
   return (
     <div className="d-flex align-items-center">
       <div className="container">
-        <div className="card w-50 mt-5">
+        <div className="card w-50 mt-5 mx-auto">
           <img src={LogoAdmin} className="card-img-top w-75 mx-5 my-2" alt="..."/>
           <div className="card-body">
             <form onSubmit={handleSubmit(submit)}>

@@ -195,7 +195,6 @@ const ModalEditBenefit = ({
               value={values.isStaff}
               onChange={handleChange}
             >
-              <option>IsStaf</option>
               <option value={true}>True</option>
               <option value={false}>False</option>
             </Form.Select>

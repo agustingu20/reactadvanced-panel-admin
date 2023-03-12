@@ -1,6 +1,8 @@
 /* istanbul ignore file */
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import LogoAdmin from '../../assets/LogoAdmin.png';
+import './header.css';
 
 const Header = ({
   isPressedBenefits,
@@ -30,10 +32,21 @@ const Header = ({
     }
   };
 
+  const logOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
-    <div className='container'>
-      <img src={LogoAdmin} alt='Header Admin Panel' className='mt-2 w-25' />
-      <div className='text-center my-5'>
+    <div className="container">
+      <img src={LogoAdmin} alt="Header Admin Panel" className="mt-2 w-25" />
+      <Button variant="danger" className="logOutButton" onClick={logOut}>
+        <img
+          src="https://icongr.am/fontawesome/power-off.svg?size=20&color=ffffff"
+          alt="logOutButton"
+        />
+      </Button>
+      <div className="text-center my-5">
         <button
           className={
             isPressedBenefits && isBenefits

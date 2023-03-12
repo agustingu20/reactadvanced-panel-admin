@@ -2,6 +2,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 import LogoAdmin from '../../assets/LogoAdmin.png';
 import { db } from '../../firebase';
 
@@ -38,6 +39,8 @@ const AdminLogin = ({ setIsLogin }) => {
     if (values.password === adminData[0].password) {
       setIsLogin(true);
       localStorage.setItem('token', JSON.stringify('loginAdmin'));
+    } else {
+      Swal.fire('Contraseña incorrecta');
     }
   };
 

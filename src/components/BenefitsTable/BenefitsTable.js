@@ -109,8 +109,8 @@ const BenefitsTable = () => {
                     Edit
                   </button>
                   <button
-                    className="btn btn-danger"
-                    data-testId="deleteBenefitButtonTest"
+                    className='btn btn-danger'
+                    data-testId='deleteBenefitButtonTest'
                     onClick={() => deleteBenefit(benefit.id)}
                   >
                     Delete

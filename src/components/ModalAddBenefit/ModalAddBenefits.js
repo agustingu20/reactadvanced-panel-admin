@@ -161,7 +161,7 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
             </div>
             <div className="mt-2">
               <Form.Label className="mx-1">Es Staf?</Form.Label>
-              <Form.Select {...register('isStaf', { required: true })}>
+              <Form.Select {...register('isStaff', { required: true })}>
                 <option value={true}>True</option>
                 <option value={false}>False</option>
               </Form.Select>

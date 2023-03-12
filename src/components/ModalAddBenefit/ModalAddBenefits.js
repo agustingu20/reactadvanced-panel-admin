@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 import app from '../../firebase';
 
 const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
@@ -25,7 +26,11 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
       handleClose();
       reset();
     } catch (error) {
-      console.error(error);
+      Swal.fire(
+        'Error al guardar el beneficio!',
+        `${error}`,
+        'error',
+      );
     }
     setButtonLoad(false);
   };

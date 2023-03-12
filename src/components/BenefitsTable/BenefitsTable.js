@@ -30,34 +30,29 @@ const BenefitsTable = () => {
   };
   /* istanbul ignore next */
 
-  const deleteBenefit = async (benefitId) => {
-    try {
-      if (
-
-        Swal.fire({
-          title: 'Quieres borrar este beneficio?',
-          text: 'No se puede volver atrás',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Borrar beneficio',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              'Beneficio eliminado!',
-              'El beneficio fue eliminado.',
-              'success',
-            );
-          }
-        })) {
+  const deleteBenefit = (benefitId) => {
+    Swal.fire({
+      title: 'Quieres borrar este beneficio?',
+      text: 'No se puede volver atrás',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Borrar beneficio',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Beneficio eliminado!',
+          'El beneficio fue eliminado.',
+          'success',
+        );
         const benefitSelectedById = doc(db, 'benefits', benefitId);
         await deleteDoc(benefitSelectedById);
         getBenefits();
+      } else {
+        Swal.fire('El beneficio no fue eliminado.');
       }
-    } catch (error) {
-      console.error(error);
-    }
+    });
   };
   /* istanbul ignore next */
   const editB = (id) => {
@@ -69,9 +64,10 @@ const BenefitsTable = () => {
   useEffect(() => {
     getBenefits();
   }, []);
+
   return (
     <>
-      <button className='btn btn-success my-3' onClick={handleShow}>
+      <button className="btn btn-success my-3" onClick={handleShow}>
         Añadir Beneficio
       </button>
       <Table striped bordered hover responsive>
@@ -98,23 +94,23 @@ const BenefitsTable = () => {
                 <td>{benefit.days}</td>
                 <td>{benefit.shortDescription}</td>
                 <td>
-                  <p className='truncateCSS'>{benefit.longDescription}</p>
+                  <p className="truncateCSS">{benefit.longDescription}</p>
                 </td>
                 <td>
-                  <img src={benefit.image} className='w-25' alt='benefit-img' />
+                  <img src={benefit.url} className="w-25" alt="benefit-img" />
                 </td>
                 <td>{benefit.isStaff}</td>
-                <td className='d-flex justify-content-center pt-4 pb-4'>
+                <td className="d-flex justify-content-center pt-4 pb-4">
                   <button
-                    className='btn btn-primary mx-2'
-                    data-testId= 'editBenefitButtonTest'
+                    className="btn btn-primary mx-2"
+                    data-testId="editBenefitButtonTest"
                     onClick={() => editB(benefit.id)}
                   >
                     Edit
                   </button>
                   <button
-                    className='btn btn-danger'
-                    data-testId= 'deleteBenefitButtonTest'
+                    className="btn btn-danger"
+                    data-testId="deleteBenefitButtonTest"
                     onClick={() => deleteBenefit(benefit.id)}
                   >
                     Delete
@@ -126,8 +122,8 @@ const BenefitsTable = () => {
         </tbody>
       </Table>
       {isLoading && (
-        <div className='d-flex justify-content-center'>
-          <Spinner animation='border' variant='primary' className='mb-5 mt-5' />
+        <div className="d-flex justify-content-center">
+          <Spinner animation="border" variant="primary" className="mb-5 mt-5" />
         </div>
       )}
       <ModalAddBenefits

@@ -30,8 +30,6 @@ const BenefitsTable = () => {
   };
   /* istanbul ignore next */
 
-  // !!!! COMENTARIO: ARREGLAR LA CONFIRMACIÓN DEL SWEET ALERT
-
   const deleteBenefit = async (benefitId) => {
     try {
       if (

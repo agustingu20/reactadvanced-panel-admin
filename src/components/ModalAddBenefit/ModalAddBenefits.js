@@ -25,10 +25,15 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
       getBenefits();
       handleClose();
       reset();
+      Swal.fire(
+        'Beneficio',
+        'Beneficio añadido correctamente!',
+        'success',
+      );
     } catch (error) {
       Swal.fire(
+        'Beneficio',
         'Error al guardar el beneficio!',
-        `${error}`,
         'error',
       );
     }

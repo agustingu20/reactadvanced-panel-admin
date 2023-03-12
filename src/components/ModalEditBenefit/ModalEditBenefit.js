@@ -35,8 +35,8 @@ const ModalEditBenefit = ({
       setValues(benefitValues);
     } catch (error) {
       Swal.fire(
+        'Beneficios',
         'Error al leer los beneficios!',
-        `${error}`,
         'error',
       );
     }
@@ -57,10 +57,15 @@ const ModalEditBenefit = ({
       getBenefits();
       handleClose();
       setEdditing(false);
+      Swal.fire(
+        'Beneficio',
+        'Beneficio editado correctamente!',
+        'success',
+      );
     } catch (error) {
       Swal.fire(
+        'Beneficio',
         'Error al editar beneficio!',
-        `${error}`,
         'error',
       );
     }

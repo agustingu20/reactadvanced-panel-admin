@@ -4,6 +4,7 @@ import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import {
   getFirestore, doc, updateDoc, getDoc,
 } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 import app from '../../firebase';
 
 const ModalEditUser = ({
@@ -49,8 +50,17 @@ const ModalEditUser = ({
       getUsers();
       handleClose();
       setIsEditing(false);
+      Swal.fire(
+        'Edición usuario',
+        'Usuario editado correctamente!',
+        'success',
+      );
     } catch (error) {
-      console.error(error);
+      Swal.fire(
+        'Error al editar usuario!',
+        `${error}`,
+        'error',
+      );
     }
   };
 
@@ -135,7 +145,7 @@ const ModalEditUser = ({
             </FloatingLabel>
 
             <button className='btn btn-primary my-3' type='submit'>
-              {!isEditing ? 'editando...' : 'Editar'}
+              {!isEditing ? 'editando...' : 'Guardar'}
             </button>
           </form>
         </Modal.Body>

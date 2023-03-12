@@ -46,6 +46,8 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
               <Form.Control
                 {...register('name', { required: true })}
                 type="text"
+                minLength={3}
+                maxLength={30}
                 placeholder="Nombre"
               />
             </FloatingLabel>
@@ -62,6 +64,8 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
               <Form.Control
                 {...register('title', { required: true })}
                 type="text"
+                minLength={3}
+                maxLength={30}
                 placeholder="Titulo"
               />
             </FloatingLabel>
@@ -78,6 +82,8 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
               <Form.Control
                 {...register('shortDescription', { required: true })}
                 type="text"
+                minLength={3}
+                maxLength={50}
                 placeholder="Descripcion corta"
                 style={{ height: '80px' }}
               />
@@ -115,6 +121,8 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
               <Form.Control
                 {...register('days', { required: true })}
                 type="text"
+                minLength={3}
+                maxLength={15}
                 placeholder="Dias del beneficio"
               />
             </FloatingLabel>
@@ -131,6 +139,8 @@ const ModalAddBenefits = ({ showAdd, setShowAdd, getBenefits }) => {
               <Form.Control
                 {...register('url', { required: true })}
                 type="text"
+                minLength={3}
+                maxLength={250}
                 placeholder="URL imagen"
               />
             </FloatingLabel>
